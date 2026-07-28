@@ -116,3 +116,7 @@ Route (app)                              Size     First Load JS
 ○  (Static)   prerendered as static content
 ƒ  (Dynamic)  server-rendered on demand
 ```
+
+## If this will be shipped tomorrow?
+
+If this product will be shipped tomorrow, I will be prioritizing all security issues, which are excluding .env.local and dangerouslySetInnerHtml with the simplest approaches. That are two first issues. One another issue that is needed to be prioritized is debounce search to save API cost and save performance issue.

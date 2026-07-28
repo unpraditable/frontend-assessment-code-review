@@ -3,7 +3,7 @@ export function ProductCard({ product }: { product: any }) {
     <div className="card" onClick={() => alert(`Added ${product.name}`)}>
       <img src={product.image} width={200} height={200} />
       <h2>{product.name}</h2>
-      <div dangerouslySetInnerHTML={{ __html: product.description }} />
+      <p>{product.description}</p>
       <p>${product.price}</p>
     </div>
   );

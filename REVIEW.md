@@ -89,3 +89,30 @@
   key should be unique and should not be using index, it will harm performance if user add or remove new product list item
 - the fix:
   use product id instead of index
+
+## Build result
+
+```
+Creating an optimized production build ...
+ ✓ Compiled successfully
+   Skipping validation of types
+   Skipping linting
+ ✓ Collecting page data
+ ✓ Generating static pages (6/6)
+ ✓ Collecting build traces
+ ✓ Finalizing page optimization
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    6.95 kB          94 kB
+├ ○ /_not-found                          871 B            88 kB
+├ ƒ /api/products                        0 B                0 B
+└ ○ /products                            6.77 kB        93.9 kB
++ First Load JS shared by all            87.1 kB
+  ├ chunks/23-f2c2ec5da154e115.js        31.5 kB
+  ├ chunks/fd9d1056-62aaf4b921c84028.js  53.6 kB
+  └ other shared chunks (total)          1.93 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+```

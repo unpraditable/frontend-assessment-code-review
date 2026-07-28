@@ -1,24 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { fetchProducts } from "@/lib/data";
+import { useState } from "react";
 import { ProductCard } from "@/components/ProductCard";
 import { SearchBar } from "@/components/SearchBar";
 import { useDebounce } from "@/hooks/useDebounce";
 import { Product } from "@/interfaces/IProduct";
+import { useFetchProducts } from "@/hooks/useFetchProducts";
 
 export default function ProductsPage() {
   const [products, setProducts] = useState<Product[]>([]);
   const [query, setQuery] = useState<string>("");
   const debouncedQuery = useDebounce(query, 500);
 
-  useEffect(() => {
-    if (debouncedQuery) {
-      fetchProducts(debouncedQuery).then((data) => {
-        setProducts(data);
-      });
-    }
-  }, [debouncedQuery]);
+  useFetchProducts(debouncedQuery, setProducts);
 
   return (
     <main>

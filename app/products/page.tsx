@@ -1,14 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { fetchProducts, Product } from "@/lib/data";
+import { fetchProducts } from "@/lib/data";
 import { ProductCard } from "@/components/ProductCard";
 import { SearchBar } from "@/components/SearchBar";
 import { useDebounce } from "@/hooks/useDebounce";
+import { Product } from "@/interfaces/IProduct";
 
 export default function ProductsPage() {
-  const [products, setProducts] = useState<any>([]);
-  const [query, setQuery] = useState("");
+  const [products, setProducts] = useState<Product[]>([]);
+  const [query, setQuery] = useState<string>("");
   const debouncedQuery = useDebounce(query, 500);
 
   useEffect(() => {
@@ -24,7 +25,7 @@ export default function ProductsPage() {
       <h1>Products</h1>
       <SearchBar onChange={setQuery} />
       <div className="grid">
-        {products.map((product: any, i: number) => (
+        {products.map((product: Product, i: number) => (
           <ProductCard key={i} product={product} />
         ))}
       </div>

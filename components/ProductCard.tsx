@@ -1,4 +1,6 @@
-export function ProductCard({ product }: { product: any }) {
+import { Product } from "@/interfaces/IProduct";
+
+export function ProductCard({ product }: { product: Product }) {
   return (
     <div className="card" onClick={() => alert(`Added ${product.name}`)}>
       <img src={product.image} width={200} height={200} />

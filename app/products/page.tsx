@@ -25,8 +25,8 @@ export default function ProductsPage() {
       <h1>Products</h1>
       <SearchBar onChange={setQuery} />
       <div className="grid">
-        {products.map((product: Product, i: number) => (
-          <ProductCard key={i} product={product} />
+        {products.map((product: Product) => (
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </main>

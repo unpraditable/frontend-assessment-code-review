@@ -45,14 +45,14 @@
 - the fix:
   add debounce search, simplest approach: https://dev.to/remejuan/react-debouncing-input-with-useeffect-3nhk
 
-## 6. Change product card div to <li> and its container (className="grid") to <ul> (nice-to-have)
+## 6. Change product card `<div>` to `<li>` and its container (className="grid") to `<ul>` (nice-to-have)
 
 - what's wrong:
-  Product card in product list page is still using <div> and its container still using <div> too
+  Product card in product list page is still using `<div>` and its container still using `<div>` too
 - why it matters:
-  Semantically its more correct to render list file with list item, like <ul> and <li>, and it will help accessibility too
+  Semantically its more correct to render list file with list item, like `<ul>` and `<li>`, and it will help accessibility too
 - the fix:
-  change <div> in product card and its container to <ul> (container) and <li> (product card)
+  change `<div>` in product card and its container to `<ul>` (container) and `<li>` (product card)
 
 ## 7. Use custom hooks for fetch API (nice-to-have)
 
